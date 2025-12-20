@@ -25,6 +25,7 @@ const CATEGORY_META = {
 
 const CategoryPage = () => {
   const { category } = useParams();
+  const BASE_URL=import.meta.env.VITE_BASE_URL
 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -41,7 +42,7 @@ const CategoryPage = () => {
         setLoading(true);
 
         const res = await axios.get(
-          `http://localhost:5000/store/product/getcategory/${category}`
+          `${BASE_URL}/store/product/getcategory/${category}`
         );
 
         setProducts(res.data.data || []);

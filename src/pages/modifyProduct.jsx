@@ -9,7 +9,7 @@ const ModifyProduct = ({ product, onClose, onSuccess }) => {
     category: product.category,
     description: product.description,
   });
-
+  const BASE_URL=import.meta.env.VITE_BASE_URL
   const [loading, setLoading] = useState(false);
   const token = localStorage.getItem("token");
 
@@ -35,7 +35,7 @@ const ModifyProduct = ({ product, onClose, onSuccess }) => {
       formData.append("description", form.description);
 
       await axios.put(
-        `http://localhost:5000/store/product/modify/${product._id}`,
+        `${BASE_URL}/store/product/modify/${product._id}`,
         formData,
         {
           headers: { Authorization: `Bearer ${token}` },

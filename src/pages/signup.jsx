@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 
 const Signup = () => {
   const navigate = useNavigate();
+  const BASE_URL=import.meta.env.VITE_BASE_URL
 
   const [formData, setFormData] = useState({
     email: "",
@@ -35,7 +36,7 @@ const Signup = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/store/auth/signup",
+        `${BASE_URL}/store/auth/signup`,
         formData
       );
 

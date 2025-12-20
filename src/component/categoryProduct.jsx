@@ -10,6 +10,7 @@ const CategoryProduct = ({
   subtitle,
   phone,
 }) => {
+  const BASE_URL=import.meta.env.VITE_BASE_URL
   const LIMIT = 4;
   const navigate = useNavigate();
 
@@ -21,7 +22,7 @@ const CategoryProduct = ({
     const fetchProducts = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/store/product/getcategory/${category}`
+          `${BASE_URL}/store/product/getcategory/${category}`
         );
 
         setProducts(res.data.data || []);
@@ -80,6 +81,8 @@ const CategoryProduct = ({
 
     navigate(`/products/${category}`);
   };
+
+  
 
   return (
     <section className="max-w-7xl mx-auto px-4 py-12">

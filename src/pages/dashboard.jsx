@@ -10,6 +10,7 @@ const Dashboard = () => {
   const [editProduct, setEditProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
+  const BASE_URL=import.meta.env.VITE_BASE_URL
 
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const Dashboard = () => {
  
   const fetchProducts = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/store/product/getall", {
+      const res = await axios.get(`${BASE_URL}/store/product/getall`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -39,7 +40,7 @@ const Dashboard = () => {
 
     try {
       await axios.delete(
-        `http://localhost:5000/store/product/removeproduct/${id}`,
+      `${BASE_URL}/store/product/removeproduct/${id}`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }

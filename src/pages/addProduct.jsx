@@ -9,6 +9,7 @@ const AddProduct = ({ onSuccess }) => {
     category: "Seeds",
     description: "",
   });
+  const BASE_URL=import.meta.env.VITE_BASE_URL
 
   const [image, setImage] = useState(null); 
   const [loading, setLoading] = useState(false);
@@ -42,7 +43,7 @@ const AddProduct = ({ onSuccess }) => {
       formData.append("productImage", image);
 
       await axios.post(
-        "http://localhost:5000/store/product/addproduct",
+        `${BASE_URL}/store/product/addproduct`,
         formData,
         {
           headers: {
