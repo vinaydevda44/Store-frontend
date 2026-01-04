@@ -1,16 +1,90 @@
-# React + Vite
+# Store Web Application (MERN Stack)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Store Web Application is a full-stack MERN-based e-commerce platform
+that allows users to browse products, place orders, and contact the store
+directly. The application is divided into separate frontend and backend
+repositories for better scalability and maintainability.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Repositories
 
-## React Compiler
+- Frontend: https://github.com/vinaydevda44/Store-frontend
+- Backend: https://github.com/vinaydevda44/Store-Server
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### User
+- Browse products by category
+- View product details
+- Select quantity and place orders
+- Contact store owner directly via WhatsApp
+- Responsive user interface
+
+### Admin / Store Owner
+- Add and manage products
+- Manage product categories
+- View and manage orders
+
+### General
+- REST API based architecture
+- Secure backend with proper validations
+- Cloud-based image storage
+- Clean UI with smooth user experience
+
+---
+
+## Tech Stack
+
+### Frontend
+- React
+- Tailwind CSS
+- Axios
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+
+### Other Tools & Services
+- Cloudinary (image storage)
+- Postman (API testing)
+- Git & GitHub (version control)
+
+---
+
+## Project Architecture
+
+The project is divided into two independent repositories:
+
+### Frontend Repository
+- Handles UI and user interaction
+- Communicates with backend using REST APIs
+- Manages application state and routing
+
+### Backend Repository
+- Handles business logic and data storage
+- Provides REST APIs for frontend
+- Manages products, categories, and orders
+
+---
+
+## Installation & Setup
+
+### Frontend Setup
+git clone https://github.com/vinaydevda44/Store-frontend.git
+cd Store-frontend
+
+npm install
+npm run dev
+
+npm install
+npm run dev
+
+## Environment Variables
+
+VITE_PHONE=YOUR_MOBILE_NO.
+VITE_BASE_URL=BASE_URL
